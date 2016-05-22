@@ -4,6 +4,9 @@ import com.springer.test.drawers.Canvas;
 import com.springer.test.tools.DrawTool;
 import com.springer.test.vo.Coordinates;
 
+/**
+ * This class implements the Rectangle Drawer to draw the rectangle on the canvas
+ */
 public class RectDrawer extends DrawTool {
 
 	// Fill character. Default for Line drawer is 'x'
@@ -25,7 +28,7 @@ public class RectDrawer extends DrawTool {
 	 */
 	@Override
 	public void draw() {
-		if(validate()) {
+		if(validateCoordinates()) {
 			// draw top and bottom lines
 			for(int i=coordinates[0].getY(); i<=coordinates[1].getY(); i++) {
 				canvas.putChar(i, coordinates[0].getX(), fillChar);
@@ -47,7 +50,7 @@ public class RectDrawer extends DrawTool {
 	 * @return
 	 */
 	@Override
-	protected boolean validate() {
+	protected boolean validateCoordinates() {
 		boolean validate = true;
 		if (coordinates.length < 2) {
 			// There should be 2 coordinates (i.e. x-y pair)
@@ -56,6 +59,6 @@ public class RectDrawer extends DrawTool {
 			// x1-y1 should be before x2-y2
 			validate = false;
 		}
-		return validate && super.validate();
+		return validate && super.validateCoordinates();
 	}
 }

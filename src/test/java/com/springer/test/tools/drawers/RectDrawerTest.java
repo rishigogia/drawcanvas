@@ -19,7 +19,7 @@ public class RectDrawerTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with rectangle drawer
 		Coordinates leftCoordinates = new Coordinates(5, 7);
 		Coordinates rightCoordinates = new Coordinates(10, 15);
 		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
@@ -45,7 +45,7 @@ public class RectDrawerTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with rectangle drawer
 		Coordinates leftCoordinates = new Coordinates(5, 7);
 		drawTool = new RectDrawer(canvas, leftCoordinates);
 
@@ -61,7 +61,7 @@ public class RectDrawerTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with rectangle drawer
 		Coordinates leftCoordinates = new Coordinates(5, 3);
 		Coordinates rightCoordinates = new Coordinates(10, 22);
 		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
@@ -80,7 +80,7 @@ public class RectDrawerTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with rectangle drawer
 		Coordinates leftCoordinates = new Coordinates(-3, 5);
 		Coordinates rightCoordinates = new Coordinates(10, 17);
 		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
@@ -99,7 +99,7 @@ public class RectDrawerTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with rectangle drawer
 		Coordinates leftCoordinates = new Coordinates(15, 17);
 		Coordinates rightCoordinates = new Coordinates(10, 13);
 		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);

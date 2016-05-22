@@ -38,7 +38,7 @@ public abstract class DrawTool {
 	 *
 	 * @return true if valid, false otherwise
 	 */
-	protected boolean validate() {
+	protected boolean validateCoordinates() {
 		boolean validate = true;
 		for(Coordinates coordinate:coordinates) {
 			if(coordinate.getX() <= 0 || coordinate.getY() <= 0 ||

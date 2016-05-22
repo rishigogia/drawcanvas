@@ -4,6 +4,9 @@ import com.springer.test.drawers.Canvas;
 import com.springer.test.tools.DrawTool;
 import com.springer.test.vo.Coordinates;
 
+/**
+ * This class implements the line drawer to draw line on the canvas
+ */
 public class LineDrawer extends DrawTool {
 
 	// Fill character. Default for Line drawer is 'x'
@@ -26,7 +29,7 @@ public class LineDrawer extends DrawTool {
 	 */
 	@Override
 	public void draw() {
-		if(validate()) {
+		if(validateCoordinates()) {
 			if(coordinates[0].getX() == coordinates[1].getX()) {
 				// Vertical Line
 				for (int i=coordinates[0].getY(); i<=coordinates[1].getY(); i++) {
@@ -49,7 +52,7 @@ public class LineDrawer extends DrawTool {
 	 * @return
 	 */
 	@Override
-	protected boolean validate() {
+	protected boolean validateCoordinates() {
 		boolean validate = true;
 		if (coordinates.length < 2) {
 			// There should be 2 coordinates (i.e. x-y pair)
@@ -61,6 +64,6 @@ public class LineDrawer extends DrawTool {
 			// either x1 = x2 (horizontal line) or y1 = y2 (vertical line) (diagonal lines not supported)
 			validate = false;
 		}
-		return validate && super.validate();
+		return validate && super.validateCoordinates();
 	}
 }
