@@ -39,4 +39,77 @@ public class RectDrawerTest extends TestCase {
 			assertThat("Rectangle not drawn correctly", canvas.getChar(rightCoordinates.getY(), i), is('x'));
 		}
 	}
+
+	@Test
+	public void testDrawInvalidNumberOfCoordinates() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(15, 20);
+		// Initialise draw tool with line drawer
+		Coordinates leftCoordinates = new Coordinates(5, 7);
+		drawTool = new RectDrawer(canvas, leftCoordinates);
+
+		// draw
+		drawTool.draw();
+
+		// assert to see no coordinated is plotted
+		assertThat("A coordinate is plotted", canvas.getChar(leftCoordinates.getX(), leftCoordinates.getY()), is(' '));
+	}
+
+	@Test
+	public void testDrawInvalidBeyondCanvas() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(15, 20);
+		// Initialise draw tool with line drawer
+		Coordinates leftCoordinates = new Coordinates(5, 3);
+		Coordinates rightCoordinates = new Coordinates(10, 22);
+		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
+
+		// draw
+		drawTool.draw();
+
+		// assert to see no rectangle should be drawn
+		for (int i=leftCoordinates.getY(); i<canvas.getHeight()-1; i++) {
+			assertThat("Rectangle is there", canvas.getChar(i, leftCoordinates.getY()), is(' '));
+		}
+	}
+
+	@Test
+	public void testDrawInvalidBeforeCanvas() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(15, 20);
+		// Initialise draw tool with line drawer
+		Coordinates leftCoordinates = new Coordinates(-3, 5);
+		Coordinates rightCoordinates = new Coordinates(10, 17);
+		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
+
+		// draw
+		drawTool.draw();
+
+		// assert to see no rectangle should be drawn
+		for (int i=1; i<rightCoordinates.getX(); i++) {
+			assertThat("Rectangle is there", canvas.getChar(leftCoordinates.getY(), i), is(' '));
+		}
+	}
+
+	@Test
+	public void testDrawInvalidReverseRectangle() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(15, 20);
+		// Initialise draw tool with line drawer
+		Coordinates leftCoordinates = new Coordinates(15, 17);
+		Coordinates rightCoordinates = new Coordinates(10, 13);
+		drawTool = new RectDrawer(canvas, leftCoordinates, rightCoordinates);
+
+		// draw
+		drawTool.draw();
+
+		// assert to see rectangle shouldn't be drawn
+		for (int i=rightCoordinates.getY(); i<leftCoordinates.getY(); i++) {
+			assertThat("Rectangle is created", canvas.getChar(i, leftCoordinates.getX()), is(' '));
+		}
+	}
 }
