@@ -42,13 +42,13 @@ public final class Canvas {
 			this.height = height + BORDER_OFFSET;
 
 			// Initialize canvas
-			canvas = new char[this.height][this.width];
+			canvas = new char[this.width][this.height];
 
-			// Set Horizontal Borders
-			setHorizontalBorders();
-
-			// Set vertical borders
+			// Set vertical Borders
 			setVerticalBorders();
+
+			// Set Horizontal borders
+			setHorizontalBorders();
 
 			// Empty canvas
 			emptyCanvas();
@@ -56,26 +56,26 @@ public final class Canvas {
 	}
 
 	/**
-	 * Setting the vertical borders
+	 * Setting the horizontal borders
 	 */
-	private void setVerticalBorders() {
+	private void setHorizontalBorders() {
 		for (int i=0; i<height; i++) {
-			// Left border
-			putChar(i, 0, BORDER_VERT);
-			// Right border
-			putChar(i, width-1, BORDER_VERT);
+			// Top border
+			putChar(i, 0, BORDER_HORIZ);
+			// Bottom border
+			putChar(i, width-1, BORDER_HORIZ);
 		}
 	}
 
 	/**
-	 * Setting the horizontal borders
+	 * Setting the vertical borders
 	 */
-	private void setHorizontalBorders() {
+	private void setVerticalBorders() {
 		for (int i=0; i<width; i++) {
-			// Top border
-			putChar(0, i, BORDER_HORIZ);
-			// Bottom border
-			putChar(height-1, i, BORDER_HORIZ);
+			// Left border
+			putChar(0, i, BORDER_VERT);
+			// Right border
+			putChar(height-1, i, BORDER_VERT);
 		}
 	}
 
@@ -85,7 +85,7 @@ public final class Canvas {
 	private void emptyCanvas() {
 		for (int i=1; i<this.width-1; i++) {
 			for (int j =1; j<this.height-1; j++) {
-				putChar(i, j, EMPTY_CHAR);
+				putChar(j, i, EMPTY_CHAR);
 			}
 		}
 	}
@@ -146,7 +146,7 @@ public final class Canvas {
 	public void displayCanvas() {
 		for (int i=0; i<width; i++) {
 			for (int j =0; j<height; j++) {
-				System.out.print(getChar(i, j));
+				System.out.print(getChar(j, i));
 			}
 			System.out.println();
 		}
