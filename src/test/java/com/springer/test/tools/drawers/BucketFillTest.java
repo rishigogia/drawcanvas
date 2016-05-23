@@ -162,7 +162,7 @@ public class BucketFillTest extends TestCase {
 		// Initialize Canvas
 		canvas = Canvas.getInstance();
 		canvas.initializeCanvas(15, 20);
-		// Initialise draw tool with line drawer
+		// Initialise draw tool with BucketFill
 		Coordinates coordinates = new Coordinates(5, 22);
 		drawTool = new BucketFill(canvas, 'c', coordinates);
 
@@ -171,5 +171,19 @@ public class BucketFillTest extends TestCase {
 
 		// assert to see no coordinated is plotted
 		assertThat("A coordinate is plotted", canvas.getChar(coordinates.getX(), canvas.getWidth()-2), is(' '));
+	}
+
+	public void testNoCanvasDrawn() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(0, 0);
+		// Initialize draw tool with BucketFill
+		Coordinates coordinates = new Coordinates(0, 0);
+		drawTool = new BucketFill(canvas, 'c', coordinates);
+
+		// draw
+		drawTool.draw();
+
+		assertThat("A coordinate is plotted", canvas.isCanvasNull(), is(true));
 	}
 }

@@ -167,4 +167,18 @@ public class LineDrawerTest extends TestCase {
 			assertThat("Horizontal line is there", canvas.getChar(leftCoordinates.getY(), i), is(' '));
 		}
 	}
+
+	public void testNoCanvasDrawn() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(0, 0);
+		// Initialize draw tool with LineDraw
+		Coordinates coordinates = new Coordinates(0, 0);
+		drawTool = new BucketFill(canvas, 'c', coordinates);
+
+		// draw
+		drawTool.draw();
+
+		assertThat("A coordinate is plotted", canvas.isCanvasNull(), is(true));
+	}
 }

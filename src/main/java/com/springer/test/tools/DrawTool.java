@@ -38,7 +38,7 @@ public abstract class DrawTool {
 	 *
 	 * @return true if valid, false otherwise
 	 */
-	protected boolean validateCoordinates() {
+	protected boolean validate() {
 		boolean validate = true;
 		for(Coordinates coordinate:coordinates) {
 			if(coordinate.getX() <= 0 || coordinate.getY() <= 0 ||
@@ -46,6 +46,10 @@ public abstract class DrawTool {
 				// Coordinates should be within the bounds of the canvas (excluding borders)
 				validate = false;
 			}
+		}
+		if (canvas.isCanvasNull()) {
+			// if the canvas is not drawn yet
+			validate = false;
 		}
 		return validate;
 	}

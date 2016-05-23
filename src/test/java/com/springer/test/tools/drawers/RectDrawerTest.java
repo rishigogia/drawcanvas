@@ -112,4 +112,18 @@ public class RectDrawerTest extends TestCase {
 			assertThat("Rectangle is created", canvas.getChar(i, leftCoordinates.getX()), is(' '));
 		}
 	}
+
+	public void testNoCanvasDrawn() {
+		// Initialize Canvas
+		canvas = Canvas.getInstance();
+		canvas.initializeCanvas(0, 0);
+		// Initialize draw tool with Rectangle Draw
+		Coordinates coordinates = new Coordinates(0, 0);
+		drawTool = new BucketFill(canvas, 'c', coordinates);
+
+		// draw
+		drawTool.draw();
+
+		assertThat("A coordinate is plotted", canvas.isCanvasNull(), is(true));
+	}
 }

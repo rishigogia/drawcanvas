@@ -26,7 +26,7 @@ public class BucketFill extends DrawTool {
 	 */
 	@Override
 	public void draw() {
-		if(validateCoordinates()) {
+		if(validate()) {
 			// bucket fill using recursive function
 			fill(fillChar, canvas.getChar(coordinates[0].getX(), coordinates[0].getY()),
 					coordinates[0].getX(), coordinates[0].getY());
@@ -41,13 +41,13 @@ public class BucketFill extends DrawTool {
 	 * @return
 	 */
 	@Override
-	protected boolean validateCoordinates() {
+	protected boolean validate() {
 		boolean validate = true;
 		if (coordinates.length < 1) {
 			// There should be 1 coordinate (i.e. x-y pair)
 			validate = false;
 		}
-		return validate && super.validateCoordinates();
+		return validate && super.validate();
 	}
 
 	private void fill(char fillChar, char charToReplace, int x, int y) {
