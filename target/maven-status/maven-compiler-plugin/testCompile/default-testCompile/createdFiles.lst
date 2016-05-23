@@ -1,0 +1,5 @@
+com\springer\test\tools\drawers\RectDrawerTest.class
+com\springer\test\drawers\InstructionTest.class
+com\springer\test\tools\drawers\LineDrawerTest.class
+com\springer\test\drawers\CanvasTest.class
+com\springer\test\tools\drawers\BucketFillTest.class

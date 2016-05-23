@@ -1,0 +1,11 @@
+com\springer\test\drawers\Instruction.class
+com\springer\test\Draw.class
+com\springer\test\tools\DrawTool.class
+com\springer\test\Draw$1.class
+com\springer\test\tools\drawers\RectDrawer.class
+com\springer\test\drawers\Commands.class
+com\springer\test\vo\Coordinates.class
+com\springer\test\tools\drawers\BucketFill.class
+com\springer\test\drawers\Instruction$1.class
+com\springer\test\drawers\Canvas.class
+com\springer\test\tools\drawers\LineDrawer.class
