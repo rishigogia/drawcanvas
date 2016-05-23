@@ -16,31 +16,31 @@ The application uses third party tools as below:
 ## Running the application
 To compile the application, please use below steps:
 * Pre-requisite
-** Java 1.8 (JAVA_HOME must be set)
-** Apache Maven (M2_HOME must be set and M2_HOME\bin should be in path)
+1. Java 1.8 (JAVA_HOME must be set)
+2. Apache Maven (M2_HOME must be set and M2_HOME\bin should be in path)
 
 * Compilation
-** download the application from github site
-** go to application root in shell/command prompt
-** type 'mvn clean install' (without the quotes) to compile the application (this runs the test cases)
+1. download the application from github site
+2. go to application root in shell/command prompt
+3. type 'mvn clean install' (without the quotes) to compile the application (this runs the test cases)
 
 * Run only test cases
-** Test cases can be run using maven command 'mvn test'
+1. Test cases can be run using maven command 'mvn test'
 
 * Executing the main application
-** Main application can be run using the command:  mvn exec:java -Dexec.mainClass="com.springer.test.Draw"
+1. Main application can be run using the command:  mvn exec:java -Dexec.mainClass="com.springer.test.Draw"
 
 ## Valid commands that can be used:
 * C width height
-** (where width and height are numbers) - This creates a canvas. Nothing can be printed on screen if there's no canvas (Eg. C 20 15)
+1. (where width and height are numbers) - This creates a canvas. Nothing can be printed on screen if there's no canvas (Eg. C 20 15)
 * L x1 y1 x2 y2
-** x1, y1, x2 and y2 are numeric (Eg. L 5 5 10 5) - This creates a line
+1. x1, y1, x2 and y2 are numeric (Eg. L 5 5 10 5) - This creates a line
 * R x1 y1 x2 y2
-** x1, y1, x2 and y2 are numeric (Eg. L 5 5 10 12) - This creates a rectangle
+1. x1, y1, x2 and y2 are numeric (Eg. L 5 5 10 12) - This creates a rectangle
 * B x1 y1 char
-** x1 and y1 are numeric, char is a single character (A-Z or a-z) (Eg. B 4 5 x) - This does a bucket fill
+1. x1 and y1 are numeric, char is a single character (A-Z or a-z) (Eg. B 4 5 x) - This does a bucket fill
 * Q
-** This quits the application
+1. This quits the application
 
 Please contact rishi_gogia@hotmail.com in case of any queries or concerns.
 
